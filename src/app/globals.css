@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.border-gradient {
+    position: relative;
+    border: 2px solid transparent;
+  }
+
+  .border-gradient:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    z-index: -1;
+    background: linear-gradient(to bottom right, pink, gold, rgb(210, 85, 210), rgb(225, 70, 168), yellow);
+    border-radius: inherit;
+  }
