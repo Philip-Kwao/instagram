@@ -4,7 +4,7 @@ import Story from './Story'
 
 const Status = () => {
   return (
-    <div className='flex items-center border mb-2'>
+    <div className='flex items-center mb-2'>
         <Story />
     </div>
   )

@@ -6,7 +6,7 @@ import Status from './Status'
 const MainSection = () => {
   return (
     <div className='m-6 flex'>
-        <div className="2xl:ml-96 xl:ml-72 w-full">
+        <div className="2xl:ml-96 xl:ml-72 w-[25rem]">
             <Status />
             <MainCard />
         </div>
