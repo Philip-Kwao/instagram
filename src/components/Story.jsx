@@ -18,7 +18,7 @@ const Story = () => {
         console.log(storyUser)
     },[])
   return (
-    <div className="flex items-center overflow-x-scroll">
+    <div className="flex items-center overflow-x-scroll scrollbar-none">
         {storyUser.map(user => (
             <StatusItem key={user.id} img={user.img} username={user.username} />
         ))}
