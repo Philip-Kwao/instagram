@@ -1,7 +1,7 @@
 import React from 'react'
 import MainCard from './MainCard'
-import Suggestion from './Suggestion'
 import Status from './Status'
+import Suggest from './Suggest'
 
 const MainSection = () => {
   return (
@@ -11,7 +11,7 @@ const MainSection = () => {
             <MainCard />
         </div>
         <div className="ml-24">
-            <Suggestion />
+            <Suggest />
         </div>
     </div>
   )

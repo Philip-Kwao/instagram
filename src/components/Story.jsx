@@ -15,7 +15,7 @@ const Story = () => {
             }
         ))
         setStoryUser(storyUser)
-        console.log(storyUser)
+        // console.log(storyUser)
     },[])
   return (
     <div className="flex items-center overflow-x-scroll scrollbar-none">
