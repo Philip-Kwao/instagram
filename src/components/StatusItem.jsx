@@ -1,15 +1,12 @@
-import Image from 'next/image'
-import React from 'react'
-import CR7 from '@/assets/images/cr7.webp'
 
-const StatusItem = () => {
+const StatusItem = ({username, img}) => {
   return (
     <div className='m-2'>
-        <div className="flex flex-col items-center">
-            <div className="w-[50px] h-[50px] border-gradient rounded-full">
-                <Image className='rounded-full w-full h-full border-white border' src={CR7} alt='status image' />
+        <div className="flex flex-col items-center group ">
+            <div className="w-[50px] h-[50px] border-gradient rounded-full group-hover:scale-110 duration-200 ease-in-out cursor-pointer">
+                <img className='rounded-full w-full h-full border-white border' src={img} alt={username} />
             </div>
-            <span className='text-sm font-light'>JohnDoe</span>
+            <span className='text-xs font-light'>{username}</span>
         </div>
     </div>
   )
