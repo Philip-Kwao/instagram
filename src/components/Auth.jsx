@@ -8,11 +8,17 @@ import GooglePlay from '@/assets/images/googleplay.png'
 import Microsoft from '@/assets/images/microsoft.png'
 import Link from 'next/link'
 import Footer from './Footer'
+import { getProviders, signIn } from 'next-auth/react'
 
-const Auth = () => {
+const Auth = async () => {
+    const providers = await getProviders()
+    return {
+        props: {providers}
+    }
     const handleForm = () => {
 
     }
+ 
   return (
     <div className='flex flex-col justify-around h-screen'>
         <div className='max-w-3xl flex items-center justify-around mx-auto text-sm font-light '>
@@ -36,11 +42,15 @@ const Auth = () => {
                             <span className='uppercase text-stone-400'>or</span>
                             <span className='absolute bg-stone-200 h-[1px] w-28 -right-[8rem] top-[0.7rem]'></span>
                         </div>
-                        <div className="flex items-center justify-center">
-                            <Image src={GoogleIcon} width={25} alt='google icon' />
-                            {" "}
-                            <span className='cursor-pointer hover:underline underline-offset-4 font-semibold my-4 text-blue-400'>Log in with Google</span>
-                        </div>
+                        {/* Google Authentication */}
+                        {Object.values(providers).map((provider)=>(
+                            <div key={provider.name} className="flex items-center justify-center">
+                                <Image src={GoogleIcon} width={25} alt='google icon' />
+                                {" "}
+                                <span className='cursor-pointer hover:underline underline-offset-4 font-semibold my-4 text-blue-400'>Log in with {provider.name}</span>
+                            </div>
+                        ))}
+
                         <span className='mb-4 hover:underline'>Forgot Password?</span>
                 </div>
                 <div className="border flex items-center text-center mx-auto w-full justify-center  h-20 my-4">
@@ -58,5 +68,6 @@ const Auth = () => {
     </div>
   )
 }
+
 
 export default Auth
